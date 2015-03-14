@@ -1,0 +1,4 @@
+1|abc|All
+2|bndr|Kill all humans
+3|kla|Koala 007
+4|cat|:3
