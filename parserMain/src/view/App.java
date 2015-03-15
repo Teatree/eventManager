@@ -5,7 +5,6 @@ import javax.swing.*;
 import textParser.TextParser;
 import json.JsonParser;
 import json.GameEvent;
-import excel.ExcelParser;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
