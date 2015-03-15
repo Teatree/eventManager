@@ -60,7 +60,6 @@ class KeyFinder implements ContentHandler {
         return true;
     }
 
-
     public boolean startObject() throws ParseException, IOException {
         return true;
     }

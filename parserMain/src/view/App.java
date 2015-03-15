@@ -68,7 +68,7 @@ public class App {
             boolean wordTyped(String typedWord) {
                 ArrayList<String> words = new ArrayList<String>();
                 TextParser textParser = new TextParser();
-              	Properties fromTextFile = textParser.getFileProperties("C:/Users/Teatree/workspace2/parserMain/resources/parserBitch.property");
+              	Properties fromTextFile = textParser.getFileProperties("src/parserBitch.property");
               	for (final String s: fromTextFile.stringPropertyNames()){
         			words.add(s+" - "+fromTextFile.get(s));
         		}

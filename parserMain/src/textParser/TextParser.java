@@ -21,7 +21,7 @@ public class TextParser {
 	
 	public static void main(String args[]){
 		TextParser parser = new TextParser();
-		Properties p = parser.getFileProperties("C:/Users/Teatree/workspace2/parserMain/resources/parserBitch.property");
+		Properties p = parser.getFileProperties("src/parserBitch.property");
 		System.out.println(p.stringPropertyNames());
 		for (final String s: p.stringPropertyNames()){
 			System.out.println(s+" "+p.get(s));

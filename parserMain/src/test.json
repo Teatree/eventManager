@@ -1,0 +1,54 @@
+{
+	"event_name" : 							"Feb26-27_Dead_Oak_Ambush",
+	"event_description" : 					"Feb26-27_Dead_Oak_Ambush",
+	
+	"custom_event_type" : 					"0",
+	"custom_event_title" : 					"STR_ACHIEVEMENT_071_OBJECT",
+	"custom_event_long_description" : 		"STR_EVENT_SP_MISSION_DEADOAK",
+	"custom_event_icon_id" : 				"0",
+	
+	"custom_event_action_id" : 				"9",
+	"custom_event_action_data" : 			"2",
+	"custom_event_requared_items" : 		"",
+	
+	"custom_event_min_goals" : 				"5,ITEM_PowerUp_Berzerk,1 20,__ITEM_Ammo_Dynamite,2 50,ITEM_Ammo_Death_Grenade,2",
+	"custom_event_min_goals_description" : 	"STR_WEEKLY_MIN_QDESC_01",
+	
+	"custom_event_priority"	:				"",
+	"custom_event_versions_list" :			"",
+	"custom_event_tags" :					"",
+	"custom_event_is_vip" :					"",	
+	"countries_filter" :					"",
+	
+	"tournament_rank_intervals" :			[ 
+												[1,1], 
+												[2,2], 
+												[3,3], 
+												[4,10], 
+												[11,100] 
+											],
+
+	"tournament_gifts" :					[ 
+												[{"name": "reward_stars", "value": "25"}],
+												[{"name": "reward_stars", "value": "20"}], 
+												[{"name": "reward_stars", "value": "15"}], 
+												[{"name": "ITEM_LotteryTicket_bronze", "value": "2"}], 
+												[{"name": "__ITEM_Ammo_Dynamite", "value": "2"}]
+											],
+											
+	"localized_fields" :					{
+												"title": {
+													"en": "Make the most kills",
+													"fr": "",
+													"default": "Make the most kills"
+												}
+											},
+											
+											
+	"tournament_type" :						"award_by_rank",
+	"tournament_delivery" :					"on_demand",
+	
+	"leaderboard_order" :					"desc",
+	"leaderboard_type" :					"league",
+	"leaderboard_group_size" :				500
+}
