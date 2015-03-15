@@ -1,0 +1,54 @@
+{
+	"event_name" : 							"Feb26-27_SP_NPC_Kill_Outlaw",
+	"event_description" : 					"Feb26-27_SP_NPC_Kill_Outlaw",
+	
+	"custom_event_type" : 					"0",
+	"custom_event_title" : 					"STR_EVENT_SP_NPC_OUTLAW_TITLE",
+	"custom_event_long_description" : 		"STR_EVENT_SP_NPC_OUTLAW_DESC",
+	"custom_event_icon_id" : 				"0",
+	
+	"custom_event_action_id" : 				"3",
+	"custom_event_action_data" : 			"Outlaw",
+	"custom_event_requared_items" : 		"ITEM_weap_sniper_TheInevitableEnd,220__ITEM_weap_Desecrator,ITEM_weap_Flamethrower",
+	"custom_event_tags" : 					"",
+	
+	"custom_event_min_goals" : 				"10,ITEM_PowerUp_Berzerk,2 35,__ITEM_Ammo_Cursed_Grenade,1 75,ITEM_Ammo_Death_Grenade,1",
+	"custom_event_min_goals_description" : 	"STR_WEEKLY_MIN_QDESC_01",
+	
+	"custom_event_priority"	:				"",
+	"custom_event_versions_list" :			"",
+	"custom_event_tags" :					"",
+	"custom_event_is_vip" :					"",	
+	"countries_filter" :					"",
+	
+	"tournament_rank_intervals" :			[ 
+												[1,1], 
+												[2,2], 
+												[3,3], 
+												[4,10], 
+												[11,100] 
+											],
+
+	"tournament_gifts" :					[ 
+												[{"name": "reward_stars", "value": "35"},{"name": "reward_vip", "value": "3000"}], 
+												[{"name": "reward_stars", "value": "25"},{"name": "reward_vip", "value": "2400"}], 
+												[{"name": "reward_stars", "value": "15"},{"name": "reward_vip", "value": "1600"}], 
+												[{"name": "reward_stars", "value": "5"}],												
+												[{"name": "__ITEM_Ammo_Cursed_Grenade", "value": "1"}]
+											],
+											
+	"localized_fields" :					{
+												"title": {
+													"en": "Slay Outlaws",
+													"default": "Slay Outlaws"
+												}
+											},
+											
+											
+	"tournament_type" :						"award_by_rank",
+	"tournament_delivery" :					"on_demand",
+	
+	"leaderboard_order" :					"desc",
+	"leaderboard_type" :					"league",
+	"leaderboard_group_size" :				500
+}
