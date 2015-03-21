@@ -256,7 +256,8 @@ class AutoSuggestor {
         for (String word : dictionary) {//get words in the dictionary which we added
             boolean fullymatches = true;
             for (int i = 0; i < typedWord.length(); i++) {//each string in the word
-                if (!typedWord.toLowerCase().startsWith(String.valueOf(word.toLowerCase().charAt(i)), i)) {//check for match
+//                if (!typedWord.toLowerCase().startsWith(String.valueOf(word.toLowerCase().charAt(i)), i)) {//check for match
+                if (!word.toLowerCase().contains(typedWord)) {//check for match
                     fullymatches = false;
                     break;
                 }
