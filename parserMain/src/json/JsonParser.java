@@ -1,20 +1,17 @@
 package json;
 
 
+import java.io.IOException;
+import java.io.StringWriter;
+import java.util.HashSet;
+import java.util.Set;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import utils.Utils;
-
-import java.awt.Event;
-import java.io.IOException;
-import java.io.StringWriter;
-import java.lang.reflect.Field;
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * Created by MainUser on 28/02/2015.
  */
@@ -165,26 +162,27 @@ public class JsonParser {
     public String encodeJson(GameEvent gameEvent){
         String resultJson = "";
         JSONObject obj=new JSONObject();
-        obj.put("event_name", gameEvent.getEvent_name());
-        obj.put("event_description", gameEvent.getEvent_description());
-        obj.put("custom_event_type", gameEvent.getCustom_event_type());
-        obj.put("custom_event_title", gameEvent.getCustom_event_title());
-        obj.put("custom_event_long_description", gameEvent.getCustom_event_long_description());
-        obj.put("custom_event_icon_id", gameEvent.getCustom_event_icon_id());
-        obj.put("custom_event_action_id", gameEvent.getCustom_event_action_id());
-        obj.put("custom_event_action_data", gameEvent.getCustom_event_action_data());
-        obj.put("custom_event_requared_items", gameEvent.getCustom_event_requared_items());
-        obj.put("custom_event_min_goals", gameEvent.getCustom_event_min_goals());
-        obj.put("custom_event_min_goals_description", gameEvent.getCustom_event_min_goals_description());
-        obj.put("custom_event_priority", gameEvent.getCustom_event_priority());
-        obj.put("custom_event_versions_list", gameEvent.getCustom_event_versions_list());
-        obj.put("custom_event_tags", gameEvent.getCustom_event_tags());
-        obj.put("countries_filter", gameEvent.getCountries_filter());
-        obj.put("custom_event_is_vip", gameEvent.getCustom_event_is_vip());
-        obj.put("tournament_type", gameEvent.getTournament_type());
-        obj.put("tournament_delivery", gameEvent.getTournament_delivery());
-        obj.put("leaderboard_order", gameEvent.getLeaderboard_order());
-        obj.put("leaderboard_type", gameEvent.getLeaderboard_type());
+        String SEPARATOR = GameEvent.KEY_VALUE_SEPARATOR;
+		obj.put("event_name", gameEvent.getEvent_name().split(SEPARATOR )[0]);
+        obj.put("event_description", gameEvent.getEvent_description().split(SEPARATOR)[0]);
+        obj.put("custom_event_type", gameEvent.getCustom_event_type().split(SEPARATOR)[0]);
+        obj.put("custom_event_title", gameEvent.getCustom_event_title().split(SEPARATOR)[0]);
+        obj.put("custom_event_long_description", gameEvent.getCustom_event_long_description().split(SEPARATOR)[0]);
+        obj.put("custom_event_icon_id", gameEvent.getCustom_event_icon_id().split(SEPARATOR)[0]);
+        obj.put("custom_event_action_id", gameEvent.getCustom_event_action_id().split(SEPARATOR)[0]);
+        obj.put("custom_event_action_data", gameEvent.getCustom_event_action_data().split(SEPARATOR)[0]);
+        obj.put("custom_event_requared_items", gameEvent.getCustom_event_requared_items().split(SEPARATOR)[0]);
+        obj.put("custom_event_min_goals", gameEvent.getCustom_event_min_goals().split(SEPARATOR)[0]);
+        obj.put("custom_event_min_goals_description", gameEvent.getCustom_event_min_goals_description().split(SEPARATOR)[0]);
+        obj.put("custom_event_priority", gameEvent.getCustom_event_priority().split(SEPARATOR)[0]);
+        obj.put("custom_event_versions_list", gameEvent.getCustom_event_versions_list().split(SEPARATOR)[0]);
+//        obj.put("custom_event_tags", gameEvent.getCustom_event_tags().split(SEPARATOR)[0]);
+        obj.put("countries_filter", gameEvent.getCountries_filter().split(SEPARATOR)[0]);
+        obj.put("custom_event_is_vip", gameEvent.getCustom_event_is_vip().split(SEPARATOR)[0]);
+        obj.put("tournament_type", gameEvent.getTournament_type().split(SEPARATOR)[0]);
+        obj.put("tournament_delivery", gameEvent.getTournament_delivery().split(SEPARATOR)[0]);
+        obj.put("leaderboard_order", gameEvent.getLeaderboard_order().split(SEPARATOR)[0]);
+        obj.put("leaderboard_type", gameEvent.getLeaderboard_type().split(SEPARATOR)[0]);
         obj.put("leaderboard_group_size", gameEvent.getLeaderboard_group_size());
         
         JSONArray tournament_rank_intervals_array = new JSONArray();
@@ -215,47 +213,47 @@ public class JsonParser {
 	    JSONArray tournament_gifts_array = new JSONArray();
 	    JSONArray gifts_array_1 = new JSONArray();
 	    JSONObject gift_1 = new JSONObject();
-		    gift_1.put("name", gameEvent.getTournament_gifts_name_1());
-		    gift_1.put("value", gameEvent.getTournament_gifts_value_1());
+		    gift_1.put("name", gameEvent.getTournament_gifts_name_1().split(SEPARATOR)[0]);
+		    gift_1.put("value", gameEvent.getTournament_gifts_value_1().split(SEPARATOR)[0]);
 		JSONObject gift_1_vip = new JSONObject();
-		    gift_1_vip.put("name", gameEvent.getTournament_gifts_name_1_vip());
-		    gift_1_vip.put("value", gameEvent.getTournament_gifts_value_1_vip());
+		    gift_1_vip.put("name", gameEvent.getTournament_gifts_name_1_vip().split(SEPARATOR)[0]);
+		    gift_1_vip.put("value", gameEvent.getTournament_gifts_value_1_vip().split(SEPARATOR)[0]);
 		gifts_array_1.add(gift_1);
 		
 		JSONArray gifts_array_2 = new JSONArray();
 		JSONObject gift_2 = new JSONObject();
-			gift_2.put("name", gameEvent.getTournament_gifts_name_2());
-			gift_2.put("value", gameEvent.getTournament_gifts_value_2());
+			gift_2.put("name", gameEvent.getTournament_gifts_name_2().split(SEPARATOR)[0]);
+			gift_2.put("value", gameEvent.getTournament_gifts_value_2().split(SEPARATOR)[0]);
 		JSONObject gift_2_vip = new JSONObject();
-			gift_2_vip.put("name", gameEvent.getTournament_gifts_name_2_vip());
-			gift_2_vip.put("value", gameEvent.getTournament_gifts_value_2_vip());
+			gift_2_vip.put("name", gameEvent.getTournament_gifts_name_2_vip().split(SEPARATOR)[0]);
+			gift_2_vip.put("value", gameEvent.getTournament_gifts_value_2_vip().split(SEPARATOR)[0]);
 		gifts_array_2.add(gift_2);
 	    
 		JSONArray gifts_array_3 = new JSONArray();
 		JSONObject gift_3 = new JSONObject();
-			gift_3.put("name", gameEvent.getTournament_gifts_name_3());
-			gift_3.put("value", gameEvent.getTournament_gifts_value_3());
+			gift_3.put("name", gameEvent.getTournament_gifts_name_3().split(SEPARATOR)[0]);
+			gift_3.put("value", gameEvent.getTournament_gifts_value_3().split(SEPARATOR)[0]);
 		JSONObject gift_3_vip = new JSONObject();
-			gift_3_vip.put("name", gameEvent.getTournament_gifts_name_3_vip());
-			gift_3_vip.put("value", gameEvent.getTournament_gifts_value_3_vip());
+			gift_3_vip.put("name", gameEvent.getTournament_gifts_name_3_vip().split(SEPARATOR)[0]);
+			gift_3_vip.put("value", gameEvent.getTournament_gifts_value_3_vip().split(SEPARATOR)[0]);
 		gifts_array_3.add(gift_3);
 		
 		JSONArray gifts_array_4 = new JSONArray();
 		JSONObject gift_4 = new JSONObject();
-			gift_4.put("name", gameEvent.getTournament_gifts_name_4());
-			gift_4.put("value", gameEvent.getTournament_gifts_value_4());
+			gift_4.put("name", gameEvent.getTournament_gifts_name_4().split(SEPARATOR)[0]);
+			gift_4.put("value", gameEvent.getTournament_gifts_value_4().split(SEPARATOR)[0]);
 		JSONObject gift_4_vip = new JSONObject();
-			gift_4_vip.put("name", gameEvent.getTournament_gifts_name_4_vip());
-			gift_4_vip.put("value", gameEvent.getTournament_gifts_value_4_vip());
+			gift_4_vip.put("name", gameEvent.getTournament_gifts_name_4_vip().split(SEPARATOR)[0]);
+			gift_4_vip.put("value", gameEvent.getTournament_gifts_value_4_vip().split(SEPARATOR)[0]);
 		gifts_array_4.add(gift_4);
 		
 		JSONArray gifts_array_5 = new JSONArray();
 		JSONObject gift_5 = new JSONObject();
-			gift_5.put("name", gameEvent.getTournament_gifts_name_5());
-			gift_5.put("value", gameEvent.getTournament_gifts_value_5());
+			gift_5.put("name", gameEvent.getTournament_gifts_name_5().split(SEPARATOR)[0]);
+			gift_5.put("value", gameEvent.getTournament_gifts_value_5().split(SEPARATOR)[0]);
 		JSONObject gift_5_vip = new JSONObject();
-			gift_5_vip.put("name", gameEvent.getTournament_gifts_name_5_vip());
-			gift_5_vip.put("value", gameEvent.getTournament_gifts_value_5_vip());
+			gift_5_vip.put("name", gameEvent.getTournament_gifts_name_5_vip().split(SEPARATOR)[0]);
+			gift_5_vip.put("value", gameEvent.getTournament_gifts_value_5_vip().split(SEPARATOR)[0]);
 		gifts_array_5.add(gift_5);
 		
 		tournament_gifts_array.add(gifts_array_1);
@@ -269,8 +267,8 @@ public class JsonParser {
 		// please refactor this future Dmitriy.
 		JSONObject localized_fields_object = new JSONObject();
 		JSONObject object_within_object = new JSONObject();
-		object_within_object.put("en", gameEvent.getLocalized_fields_value_en());
-		object_within_object.put("default", gameEvent.getLocalized_fields_value_default());
+		object_within_object.put("en", gameEvent.getLocalized_fields_value_en().split(SEPARATOR)[0]);
+		object_within_object.put("default", gameEvent.getLocalized_fields_value_default().split(SEPARATOR)[0]);
 		localized_fields_object.put("title", object_within_object);
 		
 		obj.put("localized_fields", localized_fields_object);

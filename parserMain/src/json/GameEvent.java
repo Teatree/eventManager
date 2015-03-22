@@ -1,12 +1,13 @@
 package json;
 
-import java.util.Arrays;
 
 /**
  * Created by MainUser on 28/02/2015.
  */
 public class GameEvent {
 
+	public static final String KEY_VALUE_SEPARATOR = " -- ";
+	
 	private String event_name;
 	private String event_description;
 	private String custom_event_type;
